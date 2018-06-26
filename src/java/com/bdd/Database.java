@@ -18,6 +18,7 @@ public class Database {
     private Connection con;
     private String username;
     private String password;
+    
     public Database() throws ClassNotFoundException, SQLException{
         this.con = null;
         this.username = "cesi";

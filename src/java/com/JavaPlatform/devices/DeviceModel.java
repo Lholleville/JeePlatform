@@ -5,7 +5,7 @@
  */
 package com.JavaPlatform.devices;
 
-import com.JavaPlatform.users.UserModel;
+import com.JavaPlatform.users.User;
 
 /**
  *
@@ -16,7 +16,7 @@ public class DeviceModel {
     private String MACAdress;
     private int id;
     private int type;
-    private UserModel user;
+    private User user;
     private int users_id;
 
     public int getUsers_id() {
@@ -35,7 +35,7 @@ public class DeviceModel {
         this.type = type;
     }
 
-    public UserModel getUser() {
+    public User getUser() {
         return user;
     }
 
