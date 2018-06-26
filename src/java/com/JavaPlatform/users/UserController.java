@@ -83,7 +83,7 @@ public class UserController {
     {
         
         ArrayList<User> Umm = new ArrayList();
-        TypedQuery<User> query = (TypedQuery<User>) this.jpa.em.createNativeQuery("SELECT u FROM User u", User.class);
+        TypedQuery<User> query = (TypedQuery<User>) this.jpa.em.createNativeQuery("SELECT * FROM users", User.class);
         List<User> results = query.getResultList();
         for (User u : results){
             Umm.add(u);
