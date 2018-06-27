@@ -5,6 +5,7 @@
  */
 package com.JavaPlatform.users;
 
+import com.JavaPlatform.devices.Devices;
 import com.bdd.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -42,6 +43,20 @@ public class UserController {
         this.con = db.getConnection();
         this.jpa = new JPAdatabase();
         
+    }
+   
+    @GET
+    @Path("/{id}/devices")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<Devices> getDataDevicesByUserID(@PathParam("id") int id){
+        ArrayList<Devices> Dmm = new ArrayList();
+        TypedQuery<Devices> query = (TypedQuery<Devices>) this.jpa.em.createNativeQuery("SELECT * FROM devices WHERE users_id = " + id, Devices.class);
+        List<Devices> results = query.getResultList();
+        for (Devices d : results){
+            Dmm.add(d);
+        }
+        this.jpa.close();
+        return Dmm;
     }
     
     @GET
@@ -88,22 +103,8 @@ public class UserController {
         for (User u : results){
             Umm.add(u);
         }
-        return Umm;
+        this.jpa.close();
 
-        
-        /*Statement st = this.con.createStatement();
-        String query = "SELECT * FROM users";
-        ResultSet rs = st.executeQuery(query);
-        
-        while(rs.next())
-        {
-            User Um = new User();
-            Um.setId(rs.getInt("id"));
-            Um.setName(rs.getString("name"));
-            Um.setEmail(rs.getString("email"));
-            Um.setPassword(rs.getString("password"));
-            Umm.add(Um);
-        }
-        */
+        return Umm;
     }
 }
