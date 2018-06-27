@@ -5,6 +5,7 @@
  */
 package com.JavaPlatform.devices;
 
+import com.JavaPlatform.users.User;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Devices implements Serializable{
     
     @Column(name="type")
     private int type;
-
+    
     public int getId() {
         return id;
     }

@@ -72,7 +72,7 @@ public class UserController {
     }
     
     @GET
-    @Path("/show/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public User getDataUsersInJSON(@PathParam("id") int id) throws SQLException
     {                
@@ -92,7 +92,7 @@ public class UserController {
     }
     
     @GET
-    @Path("/show")
+    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<User> getDataUserInJSON() throws SQLException
     {
