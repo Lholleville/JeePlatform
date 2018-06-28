@@ -1,0 +1,16 @@
+package com.api.model;
+
+import javax.annotation.Generated;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
+
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-28T13:33:47")
+@StaticMetamodel(Devices.class)
+public class Devices_ { 
+
+    public static volatile SingularAttribute<Devices, Integer> users_id;
+    public static volatile SingularAttribute<Devices, String> MACadress;
+    public static volatile SingularAttribute<Devices, Integer> id;
+    public static volatile SingularAttribute<Devices, Integer> type;
+
+}

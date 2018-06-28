@@ -1,0 +1,8 @@
+com\bdd\JPAdatabase.class
+bdd\Database.class
+com\api\controller\UserController.class
+com\api\model\User_.class
+com\api\model\Devices_.class
+com\api\model\Devices.class
+com\api\model\User.class
+com\api\ApplicationConfig.class
