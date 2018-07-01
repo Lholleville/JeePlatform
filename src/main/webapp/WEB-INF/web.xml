@@ -4,10 +4,6 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
-    
-    
-    
-    
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -17,8 +13,6 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
-    
-    
     <servlet>
         <servlet-name>indexServlet</servlet-name>
         <servlet-class>servlets.indexServlet</servlet-class>
@@ -28,13 +22,46 @@
         <servlet-name>indexServlet</servlet-name>
         <url-pattern>/userreg</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>servlets.loginServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/userlogin</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DecoServlet</servlet-name>
+        <servlet-class>servlets.DecoServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DecoServlet</servlet-name>
+        <url-pattern>/userlogout</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeviceServlet</servlet-name>
+        <servlet-class>servlets.DeviceServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeviceServlet</servlet-name>
+        <url-pattern>/devices</url-pattern>
+    </servlet-mapping>
     
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>taglibs.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/index.xhtml</welcome-file>
+        <welcome-file>faces/home.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

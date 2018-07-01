@@ -5,7 +5,11 @@
  */
 package Entities;
 
+import bdd.Database;
 import java.io.Serializable;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
@@ -20,6 +24,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -59,8 +64,6 @@ public class Device implements Serializable {
     private Integer user_id;
     
     
-  
-  
     
     public Integer getUser_id() {
         return user_id;
@@ -69,6 +72,9 @@ public class Device implements Serializable {
     public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
+    
+    
+    
 
     public Device() {
     }

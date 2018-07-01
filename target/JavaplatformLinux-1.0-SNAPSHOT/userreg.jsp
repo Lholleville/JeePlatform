@@ -4,30 +4,31 @@
     Author     : Loic
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Backoffice</title>
-    </head>
-    <body>
-        <h1>Bienvenue sur le backoffice</h1>
-        
-        
-    <c:if test="" >
-        
-    </c:if>
-            <c:out value="Bonjour ${ nom }"> </c:out>
-            
-        
-        
-        <h2>Register new user</h2>
-        <form method="POST" action="userreg">
-            <label for="name">Name: </label>
-            <input type="text" name="name" id="name" />
-            <input type="submit" value="Register"/>
-        </form>
+  
+                <c:if test="${ !empty name}" >
+                    <p><c:out value="Bonjour ${ name }"> </c:out></p>
+                </c:if>
+           
+                <h2>Register a new user</h2>
+                <form method="POST" action="userreg" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name" class="label-control">Name: </label>
+                        <input type="text" name="name" id="name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">Password </label>
+                        <input type="password" name="password" id="password" class="form-control"/><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="label-control">Email : </label>
+                        <input type="email" name="email" id="email" class="form-control"/><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Register" class="btn btn-primary"/>
+                    </div>
+                </form>  
+            </div>
+        </div>
     </body>
 </html>

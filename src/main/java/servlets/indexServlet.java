@@ -5,8 +5,13 @@
  */
 package servlets;
 
+import model.Login;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,7 +77,20 @@ public class indexServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        request.setAttribute("nom", name);
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        request.setAttribute("name", name);
+        Login login = new Login();
+        try {
+            login.register(name, email, password);
+        } catch (SQLException ex) {
+            Logger.getLogger(indexServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(indexServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(indexServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.getServletContext().getRequestDispatcher("/userreg.jsp").forward(request, response);
         processRequest(request, response);
     }

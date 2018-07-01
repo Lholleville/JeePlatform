@@ -8,10 +8,13 @@ package Entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Resource;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +22,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceException;
 import javax.persistence.Table;
+import javax.servlet.http.HttpServletRequest;
+import javax.transaction.UserTransaction;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -63,7 +70,7 @@ public class User implements Serializable {
     @Column(name = "mail")
     private String mail;
     
-
+    
     public User() {
     }
 
@@ -130,7 +137,11 @@ public class User implements Serializable {
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
+    
+   
 
+  
+    
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
