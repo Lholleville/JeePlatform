@@ -10,6 +10,9 @@
                         <label for="name" class="label-control">Name:</label>
                         <input type="text" class="form-control" id="name" placeholder="MAC Address" name="name" value="${device.getName()}"/>
                     </div>
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="${device.getId()}"/>
+                    </div>
                    <div class="form-group">
                         <label for="unit" class="label-control">Unit:</label>
                         <input type="text" class="form-control" id="unit" name="unit" placeholder="Km/h, °C, s ..." value="${device.getUnit()}"/>

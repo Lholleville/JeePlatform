@@ -229,16 +229,18 @@ public class DeviceModel {
     
     public void updateDevice(HttpServletRequest request) throws SQLException{
                 
-        String query = "UPDATE device SET name = ?, unit = ?, status = ?, user_id = ?, devicetype = ?";
+        String query = "UPDATE device SET name = ?, unit = ?, status = ?, user_id = ?, devicetype = ? WHERE id = ?";
         int status = Integer.parseInt(request.getParameter("status"));
         int user_id = Integer.parseInt(request.getParameter("user_id"));
         int devicetype = Integer.parseInt(request.getParameter("devicetype"));
+        int id = Integer.parseInt(request.getParameter("id"));
         PreparedStatement preparedStmt = this.con.prepareStatement(query);    
         preparedStmt.setString(1, request.getParameter("name"));
         preparedStmt.setString(2, request.getParameter("unit"));
         preparedStmt.setInt(3, status);
         preparedStmt.setInt(4, user_id);
         preparedStmt.setInt(5, devicetype);
+        preparedStmt.setInt(6, id);
         preparedStmt.execute();
     }
 }
