@@ -7,6 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JEE-Plaform - Backoffice</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen" />
     </head>
     
     <body>

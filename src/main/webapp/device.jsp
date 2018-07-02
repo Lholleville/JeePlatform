@@ -11,6 +11,7 @@
                         <th>Unit</th>
                         <th>Status</th>
                         <th>User</th>
+                        <th>Edit</th>
                     </tr>
                     <c:forEach items="${ListeDevice}" var="device">
                         <tr>      
@@ -18,7 +19,8 @@
                             <td><c:out value="${device.getDeviceTypeObject(device.getDeviceType())}"></c:out></td>
                             <td><c:out value="${device.getUnit()}"></c:out></td>
                             <td><c:out value="${device.getStatus()}"></c:out></td>
-                            <td><c:out value="${device.getUser(device.getUser_id())}"></c:out></td>  
+                            <td><c:out value="${device.getUser(device.getUser_id())}"></c:out></td>
+                            <td><a href="devices/edit?id=${device.getId()}" class="btn btn-primary">Edit</a></td>
                         </tr>
                     </c:forEach>
                 </table>

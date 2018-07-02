@@ -3,6 +3,7 @@ D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\Telem
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\DecoServlet.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Entities\Devicetype.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Session\UserroleFacade.java
+D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\addDeviceServlet.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Session\UserFacade.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\HomeServlet.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Entities\Userrole.java
@@ -20,9 +21,11 @@ D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\Devic
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\UserFacadeREST.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Session\AbstractFacade.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Entities\Telemetry.java
+D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\model\DeviceModel.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\loginServlet.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\UserdeviceFacadeREST.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Session\DeviceFacade.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\AbstractFacade.java
+D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\model\UserModel.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\indexServlet.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\DeviceServlet.java

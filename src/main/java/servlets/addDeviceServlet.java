@@ -5,31 +5,27 @@
  */
 package servlets;
 
-import Entities.Device;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.DeviceModel;
-import service.DeviceFacadeREST;
+import model.DevicetypeModel;
+import model.UserModel;
 
 /**
  *
  * @author Loic
  */
-@WebServlet(name = "DeviceServlet", urlPatterns = {"/DeviceServlet"})
-public class DeviceServlet extends HttpServlet {
-
-    @EJB
-    private DeviceFacadeREST deviceFacadeREST;
+@WebServlet(name = "addDeviceServlet", urlPatterns = {"/addDeviceServlet"})
+public class addDeviceServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -48,10 +44,10 @@ public class DeviceServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeviceServlet</title>");            
+            out.println("<title>Servlet addDeviceServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DeviceServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet addDeviceServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -69,21 +65,25 @@ public class DeviceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            DeviceModel dm = new DeviceModel();
-            List<DeviceModel> ld = dm.findAll();
-            
-            request.setAttribute("ListeDevice", ld);
-            
-            this.getServletContext().getRequestDispatcher("/device.jsp").forward(request, response);
-            
+      
+        
+      try {
+            UserModel user = new UserModel();
+            DevicetypeModel dtm = new DevicetypeModel();
+            List<UserModel> LUm = user.findAll();
+            List<DevicetypeModel> Ldtm = dtm.findAll();
+            request.setAttribute("ListUser", LUm);
+            request.setAttribute("ListDeviceType", Ldtm);
+            System.out.println(request.getAttribute("ListUser"));
+            this.getServletContext().getRequestDispatcher("/addDevice.jsp").forward(request, response);
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(DeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(addDeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(addDeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -96,20 +96,34 @@ public class DeviceServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        try {
+            UserModel user = new UserModel();
+            DevicetypeModel dtm = new DevicetypeModel();
+            List<UserModel> LUm = user.findAll();
+            List<DevicetypeModel> Ldtm = dtm.findAll();
+            request.setAttribute("ListUser", LUm);
+            request.setAttribute("ListDeviceType", Ldtm);
+            Integer status = Integer.parseInt(request.getParameter("status"));
+            Integer user_id = Integer.parseInt(request.getParameter("user_id"));
+            Integer devicetype = Integer.parseInt(request.getParameter("devicetype"));
+            DeviceModel device = new DeviceModel();
+            device.createDevice(request.getParameter("name"),
+                    request.getParameter("unit"),
+                    status,
+                    user_id, 
+                    devicetype
+            );
             
-           try {
-            DeviceModel dm = new DeviceModel();
-            List<DeviceModel> ld = dm.findAll();
             
-            request.setAttribute("ListeDevice", ld);
-            this.getServletContext().getRequestDispatcher("/device.jsp").forward(request, response);
-            
+            this.getServletContext().getRequestDispatcher("/addDevice.jsp").forward(request, response);
             processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(DeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(addDeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(addDeviceServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     /**

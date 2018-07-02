@@ -63,8 +63,6 @@ public class Device implements Serializable {
     @Column(name = "user_id")
     private Integer user_id;
     
-    
-    
     public Integer getUser_id() {
         return user_id;
     }
@@ -73,9 +71,6 @@ public class Device implements Serializable {
         this.user_id = user_id;
     }
     
-    
-    
-
     public Device() {
     }
     

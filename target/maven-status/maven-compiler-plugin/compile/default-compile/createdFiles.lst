@@ -1,4 +1,3 @@
-Session\DeviceFacade.class
 Entities\Devicetype.class
 Session\UserdeviceFacade.class
 service\AbstractFacade.class
@@ -7,12 +6,9 @@ Entities\User.class
 Entities\User_.class
 service\UserroleFacadeREST.class
 service\ApplicationConfig.class
-Entities\Device.class
 Entities\Userdevice.class
 Session\AbstractFacade.class
-service\DeviceFacadeREST.class
 Entities\Telemetry_.class
-Entities\Device_.class
 service\DevicetypeFacadeREST.class
 service\UserFacadeREST.class
 service\UserdeviceFacadeREST.class

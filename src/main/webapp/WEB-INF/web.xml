@@ -4,6 +4,7 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+    
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -13,6 +14,7 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>indexServlet</servlet-name>
         <servlet-class>servlets.indexServlet</servlet-class>
@@ -22,6 +24,7 @@
         <servlet-name>indexServlet</servlet-name>
         <url-pattern>/userreg</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>servlets.loginServlet</servlet-class>
@@ -31,6 +34,7 @@
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/userlogin</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>DecoServlet</servlet-name>
         <servlet-class>servlets.DecoServlet</servlet-class>
@@ -40,6 +44,7 @@
         <servlet-name>DecoServlet</servlet-name>
         <url-pattern>/userlogout</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>DeviceServlet</servlet-name>
         <servlet-class>servlets.DeviceServlet</servlet-class>
@@ -50,6 +55,25 @@
         <url-pattern>/devices</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>addDeviceServlet</servlet-name>
+        <servlet-class>servlets.addDeviceServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDeviceServlet</servlet-name>
+        <url-pattern>/addDevice</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deviceEditServlet</servlet-name>
+        <servlet-class>servlets.deviceEditServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deviceEditServlet</servlet-name>
+        <url-pattern>/devices/edit</url-pattern>
+    </servlet-mapping>
+
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

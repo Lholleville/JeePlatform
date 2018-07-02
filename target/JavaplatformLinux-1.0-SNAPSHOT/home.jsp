@@ -6,6 +6,7 @@
         <c:if test="${ empty SessionScope.user }">
             <a href="userlogin">Login</a>
             <a href="userreg">Register</a>
+            <a href="devices">Devices List</a>
         </c:if>
         <c:if test="${ !empty SessionScope.user }">
              <a href="userlogout">Log Out</a>
