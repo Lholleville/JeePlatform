@@ -1,3 +1,4 @@
+D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\model\DevicetypeModel.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Session\DevicetypeFacade.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\TelemetryFacadeREST.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\DecoServlet.java
@@ -12,6 +13,7 @@ D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\bdd\Database.
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\model\Login.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Session\TelemetryFacade.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\DevicetypeFacadeREST.java
+D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\servlets\deviceEditServlet.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\ApplicationConfig.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\Entities\Userdevice.java
 D:\Loic\Documents\NetBeansProjects\JavaplatformLinux\src\main\java\service\UserroleFacadeREST.java

@@ -41,6 +41,13 @@ public class UserFacadeREST extends AbstractFacade<User> {
     public void create(User entity) {
         super.create(entity);
     }
+    
+    /*@POST
+    @Path("setToken")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void setToken(String Token, String email){
+        
+    }*/
 
     @PUT
     @Path("{id}")

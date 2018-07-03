@@ -6,6 +6,12 @@
 package service;
 
 import Entities.Device;
+import bdd.Database;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -27,7 +33,8 @@ import javax.ws.rs.core.MediaType;
 @Stateless
 @Path("entities.device")
 public class DeviceFacadeREST extends AbstractFacade<Device> {
-
+    
+    
     @PersistenceContext(unitName = "com.mycompany_JavaplatformLinux_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
@@ -68,7 +75,31 @@ public class DeviceFacadeREST extends AbstractFacade<Device> {
     public List<Device> findAll() {
         return super.findAll();
     }
-
+    
+    @GET
+    @Path("user/{id_user}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Device> findDeviceByUserId(@PathParam("id_user") Integer id_user) throws ClassNotFoundException, SQLException {
+        Database bdd = new Database();
+        Connection con = bdd.getConnection();
+        List<Device> ld = new ArrayList<>();
+        Statement st = con.createStatement();
+        String query = "SELECT * FROM device WHERE user_id = '"+ id_user +"'";
+        ResultSet rs = st.executeQuery(query);
+        
+        while(rs.next()){
+            Device device = new Device();
+            device.setId(rs.getInt("id"));
+            device.setName(rs.getString("name"));
+            device.setStatus(rs.getInt("status"));
+            device.setDeviceType(rs.getInt("devicetype"));
+            device.setUser_id(rs.getInt("user_id"));
+            ld.add(device);
+        }
+        
+        return ld;
+    }
+    
     @GET
     @Path("{from}/{to}")
     @Produces(MediaType.APPLICATION_JSON)

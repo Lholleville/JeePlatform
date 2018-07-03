@@ -41,6 +41,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Device.findByName", query = "SELECT d FROM Device d WHERE d.name = :name")
     , @NamedQuery(name = "Device.findByDeviceType", query = "SELECT d FROM Device d WHERE d.deviceType = :deviceType")
     , @NamedQuery(name = "Device.findByUnit", query = "SELECT d FROM Device d WHERE d.unit = :unit")
+    , @NamedQuery(name = "Device.findByUserId", query = "SELECT d FROM Device d WHERE d.user_id = :user_id")    
     , @NamedQuery(name = "Device.findByStatus", query = "SELECT d FROM Device d WHERE d.status = :status")})
 public class Device implements Serializable {
 
